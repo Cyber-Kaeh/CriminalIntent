@@ -36,4 +36,7 @@ class MyFragmentTest {
 
         onView(withId(R.id.crime_date)).check(matches(isDisplayed()))
     }
+
+
 }
+
