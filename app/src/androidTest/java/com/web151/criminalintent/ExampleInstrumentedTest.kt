@@ -1,5 +1,10 @@
 package com.web151.criminalintent
 
+import androidx.fragment.app.testing.launchFragmentInContainer
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 
@@ -20,5 +25,15 @@ class ExampleInstrumentedTest {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         assertEquals("com.web151.criminalintent", appContext.packageName)
+    }
+}
+
+@RunWith(AndroidJUnit4::class)
+class MyFragmentTest {
+    @Test
+    fun testFragmentUI() {
+        val scenario = launchFragmentInContainer<CrimeDetailFragment>(themeResId = R.style.Theme_CriminalIntent)
+
+        onView(withId(R.id.crime_date)).check(matches(isDisplayed()))
     }
 }
