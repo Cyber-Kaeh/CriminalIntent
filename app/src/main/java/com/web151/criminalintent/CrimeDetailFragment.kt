@@ -28,7 +28,7 @@ class CrimeDetailFragment: Fragment() {
             title = "",
             date = Date(),
             isSolved = false,
-            requiresPolice = Random.nextInt(0, 2)
+            requiresPolice = Random.nextBoolean()
         )
     }
 

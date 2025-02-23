@@ -24,7 +24,9 @@ class CrimeListFragment: Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(TAG, "Crime type: ${crimeListViewModel.crimes.forEach { crime -> println(crime.requiresPolice) }}")
+        crimeListViewModel.crimes.forEach { crime ->
+//            Log.d(TAG, "Crime object: ${crime.requiresPolice}}")
+        }
     }
 
     override fun onCreateView(

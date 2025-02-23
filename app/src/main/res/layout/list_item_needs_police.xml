@@ -1,29 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="8dp">
 
-    <TextView
-        android:id="@+id/crime_title"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Crime Title"/>
+        android:layout_height="match_parent"
+        android:padding="8dp">
 
-    <TextView
-        android:id="@+id/crime_date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/crime_title"
-        android:text="Crime Date"/>
+        <TextView
+            android:id="@+id/crime_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crime Title"/>
 
-    <Button
-        android:id="@+id/call_police_button"
-        android:layout_width="204dp"
-        android:layout_height="38dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="7dp"
-        android:text="Call Police!" />
+        <TextView
+            android:id="@+id/crime_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/crime_title"
+            android:text="Crime Date"/>
 
+        <Button
+            android:id="@+id/call_police_button"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:layout_alignParentEnd="true"
+            android:text="Call Police!" />
 
-</RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>
