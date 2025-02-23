@@ -14,6 +14,9 @@
       <SelectionState runConfigName="testIfCallPoliceButtonDisplayed()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+      <SelectionState runConfigName="testCrimeTitleFullyVisible()">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
     </selectionStates>
   </component>
 </project>
