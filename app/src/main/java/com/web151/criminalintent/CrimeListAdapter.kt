@@ -39,5 +39,9 @@ class CrimeListAdapter(
     }
 
     override fun getItemCount() = crimes.size
+
+    override fun getItemViewType(position: Int): Int {
+        return super.getItemViewType(position)
+    }
 }
 

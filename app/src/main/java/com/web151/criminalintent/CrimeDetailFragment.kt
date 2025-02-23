@@ -8,6 +8,7 @@ import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import com.web151.criminalintent.databinding.FragmentCrimeDetailsBinding
 import java.util.Date
+import kotlin.random.Random
 import java.util.UUID
 
 class CrimeDetailFragment: Fragment() {
@@ -22,11 +23,12 @@ class CrimeDetailFragment: Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        crime =Crime(
+        crime = Crime(
             id = UUID.randomUUID(),
             title = "",
             date = Date(),
-            isSolved = false
+            isSolved = false,
+            requiresPolice = Random.nextInt(0, 2)
         )
     }
 

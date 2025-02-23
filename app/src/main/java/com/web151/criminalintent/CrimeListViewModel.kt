@@ -3,6 +3,7 @@ package com.web151.criminalintent
 import androidx.lifecycle.ViewModel
 import java.util.Date
 import java.util.UUID
+import kotlin.random.Random
 
 class CrimeListViewModel: ViewModel() {
     val crimes = mutableListOf<Crime>()
@@ -13,7 +14,8 @@ class CrimeListViewModel: ViewModel() {
                 id = UUID.randomUUID(),
                 title = "Crime #$i",
                 date = Date(),
-                isSolved = i % 2 == 0
+                isSolved = i % 2 == 0,
+                requiresPolice = Random.nextInt(0, 2)
             )
 
             crimes += crime
