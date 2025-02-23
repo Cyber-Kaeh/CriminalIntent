@@ -53,6 +53,7 @@ dependencies {
     androidTestImplementation(libs.androidx.runner)
     androidTestImplementation(libs.androidx.rules)
     androidTestImplementation(libs.androidx.fragment.testing)
+    androidTestImplementation(libs.espresso.contrib)
     debugImplementation(libs.androidx.fragment.testing)
     debugImplementation(libs.androidx.monitor)
     implementation(libs.androidx.fragment.ktx)

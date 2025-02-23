@@ -20,7 +20,7 @@ class CrimeListFragment: Fragment() {
             "Cannot access binding because it is null. Is the view visible?"
         }
 
-    private val crimeListViewModel: CrimeListViewModel by viewModels()
+    internal val crimeListViewModel: CrimeListViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

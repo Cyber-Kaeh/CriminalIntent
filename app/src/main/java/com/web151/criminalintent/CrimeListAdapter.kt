@@ -24,6 +24,7 @@ class CrimeHolder(
     }
 }
 
+// Implemented a new class to bind the 2nd view to
 class ExtremeCrimeHolder(
     private val binding: ListItemNeedsPoliceBinding
 ) : RecyclerView.ViewHolder(binding.root) {
@@ -51,10 +52,11 @@ class CrimeListAdapter(
     private val crimes: List<Crime>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     // This is where the challenges starts page 338
+    // Had to change to RecyclerView.ViewHolder so it would get the appropriate view
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-//        val binding = ListItemCrimeBinding.inflate(inflater, parent, false)
 
+        // looks for the view type from the getItemViewType() then binds the xml layout
         return when (viewType) {
             0 -> {
                 val binding = ListItemCrimeBinding.inflate(inflater, parent, false)
@@ -70,6 +72,8 @@ class CrimeListAdapter(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val crime = crimes[position]
+
+        // Determines which ViewHolder was passed then sets the data from the crime object
         when (holder) {
             is CrimeHolder -> holder.bind(crime)
             is ExtremeCrimeHolder -> holder.bind(crime)
