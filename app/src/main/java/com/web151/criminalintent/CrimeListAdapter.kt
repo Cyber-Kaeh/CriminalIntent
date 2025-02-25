@@ -1,18 +1,24 @@
 package com.web151.criminalintent
 
+import android.icu.text.DateFormat
+import android.icu.text.SimpleDateFormat
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.web151.criminalintent.databinding.ListItemCrimeBinding
+import java.util.Locale
 
 class CrimeHolder(
     private val binding: ListItemCrimeBinding
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(crime: Crime) {
         binding.crimeTitle.text = crime.title
-        binding.crimeDate.text = crime.date.toString()
-
+//        binding.crimeDate.text = crime.date.toString()
+//        val df = DateFormat.getDateInstance().format(crime.date)
+        val df = SimpleDateFormat("EEEE, MMM dd, yyyy", Locale.getDefault()).format(crime.date)
+        binding.crimeDate.text = df
         binding.root.setOnClickListener {
             Toast.makeText(
                 binding.root.context,
@@ -20,13 +26,18 @@ class CrimeHolder(
                 Toast.LENGTH_SHORT
             ).show()
         }
+
+        binding.crimeSolved.visibility = if (crime.isSolved) {
+            View.VISIBLE
+        } else {
+            View.GONE
+        }
     }
 }
 
 class CrimeListAdapter(
     private val crimes: List<Crime>
 ) : RecyclerView.Adapter<CrimeHolder>() {
-    // This is where the challenges starts page 338
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CrimeHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ListItemCrimeBinding.inflate(inflater, parent, false)

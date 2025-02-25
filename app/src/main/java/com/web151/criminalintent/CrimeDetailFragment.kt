@@ -1,5 +1,7 @@
 package com.web151.criminalintent
 
+import android.icu.text.DateFormat
+import android.icu.text.SimpleDateFormat
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +10,7 @@ import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import com.web151.criminalintent.databinding.FragmentCrimeDetailsBinding
 import java.util.Date
+import java.util.Locale
 import java.util.UUID
 
 class CrimeDetailFragment: Fragment() {
